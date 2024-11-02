@@ -1,34 +1,33 @@
-"use client";
+import React from "react";
 
 interface CategoryFilterProps {
   categories: string[];
   selectedCategory: string;
-  onCategorySelect: (category: any) => void;
+  onCategorySelect: (category: string) => void;
 }
 
-export function CategoryFilter({
+const CategoryFilter: React.FC<CategoryFilterProps> = ({
   categories,
   selectedCategory,
   onCategorySelect,
-}: CategoryFilterProps) {
+}) => {
   return (
-    <section className="container mx-auto px-4 py-8 ">
-      <h3 className="text-3xl text-end mb-20 pt-6 font-bold ">Categorías</h3>
-      <div className="flex flex-col gap-4 items-end">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => onCategorySelect(category)}
-            className={`px-4 py-2 rounded-xl w-auto ${
-              selectedCategory === category
-                ? "bg-primary text-card"
-                : " text-zinc-400"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-    </section>
+    <div className="flex gap-4 justify-center">
+      {categories.map((category) => (
+        <button
+          key={category}
+          className={`px-3 py-1.5 rounded-sm font-medium ${
+            selectedCategory === category
+              ? "bg-card-foreground/10 text-white border"
+              : "bg-card text-gray-400 border"
+          }`}
+          onClick={() => onCategorySelect(category)}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
   );
-}
+};
+
+export default CategoryFilter;
