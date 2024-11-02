@@ -1,8 +1,4 @@
-export interface Author {
-  name: string;
-  avatar: string;
-}
-
+// En types/blog.ts
 export interface Comment {
   id: string;
   content: string;
@@ -11,17 +7,22 @@ export interface Comment {
   postId: string;
 }
 
+export interface Author {
+  name: string;
+  avatar: string;
+}
+
 export interface Post {
-  category: string;
   id: string;
   title: string;
+  category: string;
   slug: string;
   excerpt: string;
   content: string;
   coverImage: string;
   author: Author;
-  tags: string[];
   createdAt: string;
+  tags: string[];
   updatedAt: string;
   comments?: Comment[];
 }

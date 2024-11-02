@@ -1,16 +1,19 @@
+// src/pages/index.tsx
+
 "use client";
 
 import { useState } from "react";
 import { PostCard } from "@/components/custom/post-card/PostCard";
 import { posts } from "@/data/posts";
-import { CategoryFilter } from "@/components/custom/category-filter/CategoryFilter";
+import { categories } from "@/data/categories";
 import { Navbar } from "@/components/custom/nav-bar/Navbar";
 import Footer from "@/components/custom/footer/Footer";
 import Image from "next/image";
+import { handleCategorySelect } from "@/utils/handleCategorySelect";
+import { Post } from "@/types/blog";
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
-  const categories = ["Todos", "Tecnología", "Salud", "Estilo de vida"]; // Lista de categorías
+  const [selectedCategory, setSelectedCategory] = useState<string>("Todos");
 
   // Filtrar posts según la categoría seleccionada
   const filteredPosts =
@@ -18,12 +21,7 @@ export default function Home() {
       ? posts
       : posts.filter((post) => post.category === selectedCategory);
 
-  const featuredPost = filteredPosts[0]; // Post destacado de la categoría seleccionada
-
-  // Función para manejar la selección de categoría
-  const handleCategorySelect = (category: string) => {
-    setSelectedCategory(category);
-  };
+  const featuredPost: Post | undefined = filteredPosts[0];
 
   return (
     <div className="min-h-screen bg-background px-40">
@@ -61,7 +59,9 @@ export default function Home() {
                       ? "bg-card-foreground/10 text-white border"
                       : "bg-card text-gray-400 border"
                   }`}
-                  onClick={() => handleCategorySelect(category)}
+                  onClick={() =>
+                    handleCategorySelect(category, setSelectedCategory)
+                  }
                 >
                   {category}
                 </button>

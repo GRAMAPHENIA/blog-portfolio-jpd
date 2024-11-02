@@ -45,62 +45,64 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <Card className="flex flex-col h-full overflow-hidden transition-all hover:shadow-lg">
-      <CardHeader className="p-0">
-        <div className="relative h-48 w-full">
-          {post.coverImage ? (
-            <Image
-              src={post.coverImage}
-              alt={post.title || "Imagen de post"}
-              fill
-              className="object-cover"
-            />
-          ) : (
-            <div className="bg-gray-200 h-full w-full flex items-center justify-center">
-              <span className="text-muted-foreground">Sin imagen</span>
-            </div>
-          )}
-        </div>
-      </CardHeader>
-      <CardContent className="p-6 flex-grow flex flex-col">
-        <div className="flex items-center gap-4 mb-4">
-          <Avatar>
-            <AvatarImage
-              src={post.author.avatar}
-              alt={post.author.name}
-              className="object-cover"
-            />
-            <AvatarFallback>{post.author.name[0]}</AvatarFallback>
-          </Avatar>
-          <div>
-            <p className="font-medium">{post.author.name}</p>
-            <p className="text-sm text-muted-foreground">
-              {new Date(post.createdAt).toLocaleDateString("es-AR", {
-                weekday: "long",
-                day: "numeric",
-                month: "long",
-              })}
-            </p>
-          </div>
-        </div>
-        <Link href={`/blog/${post.slug || "#"}`}>
-          <h3 className="text-2xl font-bold mb-2 hover:text-primary">
-            {post.title || "Título no disponible"}
-          </h3>
-        </Link>
-        <p className="text-muted-foreground mb-4">
-          {post.excerpt || "Sin descripción disponible."}
-        </p>
-        <div className="flex gap-2 mt-4">
-          {post.tags?.map((tag) => (
-            <span
-              key={tag}
-              className="bg-secondary text-secondary-foreground px-2 py-1 rounded-md text-sm"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </CardContent>
+     <CardHeader className="p-0">
+  <div className="relative h-48 w-full">
+    {post.coverImage ? (
+      <Image
+        src={post.coverImage}
+        alt={post.title || "Imagen de post"}
+        fill
+        className="object-cover"
+      />
+    ) : (
+      <div className="bg-gray-200 h-full w-full flex items-center justify-center">
+        <span className="text-muted-foreground">Sin imagen</span>
+      </div>
+    )}
+  </div>
+</CardHeader>
+<CardContent className="p-6 flex-grow flex flex-col">
+  <div className="flex items-center gap-4 mb-4">
+    <Avatar>
+      <AvatarImage
+        src={post.author?.avatar || "/default-avatar.png"}
+        alt={post.author?.name || "Autor desconocido"}
+        className="object-cover"
+      />
+      <AvatarFallback>{post.author?.name ? post.author.name[0] : "A"}</AvatarFallback>
+    </Avatar>
+    <div>
+      <p className="font-medium">{post.author?.name || "Autor desconocido"}</p>
+      <p className="text-sm text-muted-foreground">
+        {new Date(post.createdAt).toLocaleDateString("es-AR", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+        })}
+      </p>
+    </div>
+  </div>
+  <Link href={`/blog/${post.slug || "#"}`}>
+    <h3 className="text-2xl font-bold mb-2 hover:text-primary">
+      {post.title || "Título no disponible"}
+    </h3>
+  </Link>
+  <p className="text-muted-foreground mb-4">
+    {post.excerpt || "Sin descripción disponible."}
+  </p>
+  <div className="flex gap-2 mt-4">
+    {post.tags?.map((tag) => (
+      <span
+        key={tag}
+        className="bg-secondary text-secondary-foreground px-2 py-1 rounded-md text-sm"
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+</CardContent>
+
+     
       <CardFooter className="flex justify-between p-6 pt-0 mt-auto">
         <Link href={`/blog/${post.slug || "#"}#comments`}>
           <Button variant="ghost" size="sm">
