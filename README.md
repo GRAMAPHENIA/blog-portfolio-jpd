@@ -24,19 +24,18 @@ Este es el repositorio del blog "404", creado con tecnologías modernas para gar
 
 ```plaintext
 404-blog/
-├── components/            # Componentes reutilizables para UI
-│   ├── custom/            # Componentes personalizados como PostCard y filtros de categorías
-│   └── ui/                # Componentes de shadcn
-├── pages/                 # Rutas del blog (Next.js)
-│   ├── api/               # Rutas de API para funcionalidad backend
-│   └── index.tsx          # Página principal del blog
-├── styles/                # Estilos globales y configuración de Tailwind
-├── types/                 # Definiciones de tipos para el proyecto
-├── utils/                 # Funciones y utilidades auxiliares
-├── data/                  # Datos y arrays predefinidos
-├── store/                 # Archivos de gestión de estado con Zustand
-├── schemas/               # Schemas de validación de Zod
-└── README.md              # Este archivo
+├── components/
+│   ├── custom/
+│   └── ui/
+├── (routes)/
+│   ├── api/
+│   └── index.tsx
+├── types/
+├── utils/
+├── data/
+├── store/
+├── schemas/
+└── README.md
 ```
 
 ## Configuración Inicial
@@ -89,6 +88,3 @@ Este es el repositorio del blog "404", creado con tecnologías modernas para gar
 
 Las contribuciones son bienvenidas. Para contribuir, crea un fork de este repositorio y abre un pull request con tus mejoras.
 
-## Licencia
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
