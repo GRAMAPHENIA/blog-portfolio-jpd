@@ -11,6 +11,7 @@ import CategoryFilter from "@/components/custom/category-filter/CategoryFilter";
 import { posts } from "@/data/posts";
 import { categories } from "@/data/categories";
 import { Post } from "@/types/blog";
+import { Separator } from "@radix-ui/react-separator";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Todos");
@@ -21,12 +22,13 @@ export default function Home() {
       : posts.find((post) => post.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-background px-40">
-      <Navbar />
+    <div className="min-h-screen bg-background px-44">
+      <Navbar />  
       <HeroImage />
-      <main className="container mx-auto px-4 py-8 flex flex-col justify-center lg:flex-row gap-8">
+      <main className="container mx-auto  py-8 flex flex-col justify-center lg:flex-row gap-8 px-4">
         <section className="lg:w-3/4">
           <h3 className="text-xl font-bold py-10">Post Destacado</h3>
+          <Separator/>
           <div className="flex flex-col items-start gap-10">
             {/* Filtro de Categorías */}
 
@@ -43,7 +45,7 @@ export default function Home() {
           {/* Listado de posts */}
           <PostFilter posts={posts} selectedCategory={selectedCategory} />
         </section>
-        <aside className="lg:w-1/4">
+        <aside className="lg:w-1/4 mt-[185px]">
           <Sidebar />
         </aside>
       </main>
