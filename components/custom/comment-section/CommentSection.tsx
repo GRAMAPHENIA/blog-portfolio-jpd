@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import { Comment } from "@/types/blog";
 import { useComments } from "@/hooks/use-comments";
 
 interface CommentSectionProps {
@@ -52,7 +51,11 @@ export function CommentSection({ postId }: CommentSectionProps) {
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-medium">{comment.author.name}</span>
                 <span className="text-sm text-muted-foreground">
-                  {new Date(comment.createdAt).toLocaleDateString()}
+                  {new Date(comment.createdAt).toLocaleDateString("es-AR", {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                  })}
                 </span>
               </div>
               <p className="text-muted-foreground">{comment.content}</p>

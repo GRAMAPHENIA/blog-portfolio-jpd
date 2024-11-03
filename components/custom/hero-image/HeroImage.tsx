@@ -15,11 +15,11 @@ const HeroImage = () => (
       height={600}
       src="https://images.unsplash.com/photo-1509718443690-d8e2fb3474b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       alt="Imagen destacada"
-      className="object-cover rounded-lg h-48 contrast-125"
+      className="object-cover rounded-none h-48 contrast-125"
     />
     {/* Efecto de oscuridad en los lados izquierdo y derecho con gradiente */}
-    <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-slate-800/90 via-orange-400/30 to-transparent rounded-l-lg"></div>
-    <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-slate-800/90 to-transparent rounded-r-lg"></div>
+    <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-slate-800/90 via-orange-800/30 to-transparent rounded-tl-lg"></div>
+    <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-slate-800/90 to-transparent rounded-tr-lg"></div>
 
     {/* Contenedor de íconos de redes sociales */}
     <div className="absolute right-0 bottom-4 bg-card/50 backdrop-blur-xl rounded-lg shadow-lg p-2 flex space-x-2 border mr-4">

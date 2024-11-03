@@ -65,7 +65,11 @@ export default function BlogPost({ params }: PageProps) {
           <div>
             <p className="font-medium text-lg">{post.author.name}</p>
             <p className="text-sm text-muted-foreground">
-              {new Date(post.createdAt).toLocaleDateString()}
+              {new Date(post.createdAt).toLocaleDateString("es-AR", {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+              })}
             </p>
           </div>
         </div>

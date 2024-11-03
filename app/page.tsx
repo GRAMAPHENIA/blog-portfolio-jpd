@@ -22,13 +22,13 @@ export default function Home() {
       : posts.find((post) => post.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-background px-44">
-      <Navbar />  
-      <HeroImage />
+    <div className="min-h-screen bg-background px-4 lg:px-44">
+      <Navbar />
+      {/* <HeroImage /> */}
       <main className="container mx-auto  py-8 flex flex-col justify-center lg:flex-row gap-8 px-4">
         <section className="lg:w-3/4">
-          <h3 className="text-xl font-bold py-10">Post Destacado</h3>
-          <Separator/>
+          <h3 className="text-xl font-bold pt-10">Post Destacado</h3>
+          <Separator className="my-[15px]  bg-card-foreground/50 data-[orientation=horizontal]:h-px" />
           <div className="flex flex-col items-start gap-10">
             {/* Filtro de Categorías */}
 
@@ -45,10 +45,11 @@ export default function Home() {
           {/* Listado de posts */}
           <PostFilter posts={posts} selectedCategory={selectedCategory} />
         </section>
-        <aside className="lg:w-1/4 mt-[185px]">
+        <aside className="lg:w-1/4 lg:mt-[185px]">
           <Sidebar />
         </aside>
       </main>
+      <HeroImage />
       <Footer />
     </div>
   );

@@ -12,7 +12,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
   onCategorySelect,
 }) => {
   return (
-    <div className="flex gap-4 justify-center">
+    <div className="space-x-2 space-y-2 lg:space-x-0 lg:space-y-0 lg:flex lg:gap-4 justify-center">
       {categories.map((category) => (
         <button
           key={category}
