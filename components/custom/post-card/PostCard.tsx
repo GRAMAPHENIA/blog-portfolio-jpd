@@ -44,9 +44,9 @@ export function PostCard({ post }: PostCardProps) {
   }
 
   return (
-    <Card className="flex flex-col h-full overflow-hidden transition-all hover:shadow-lg">
+    <Card className="flex flex-col h-full overflow-hidden transition-all hover:shadow-lg mt-8">
       <CardHeader className="p-0">
-        <div className="relative h-48 w-full">
+        <div className="relative h-36 w-full">
           {post.coverImage ? (
             <Image
               src={post.coverImage}

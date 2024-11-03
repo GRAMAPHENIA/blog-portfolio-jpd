@@ -24,31 +24,35 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background px-4 lg:px-44">
       <Navbar />
-      {/* <HeroImage /> */}
+
       <main className="container mx-auto  py-8 flex flex-col justify-center lg:flex-row gap-8 px-4">
         <section className="lg:w-3/4">
-          <h3 className="text-xl font-bold pt-10">Post Destacado</h3>
-          <Separator className="my-[15px]  bg-card-foreground/50 data-[orientation=horizontal]:h-px" />
-          <div className="flex flex-col items-start gap-10">
-            {/* Filtro de Categorías */}
+          {/* <h3 className="text-xl font-bold pt-10">Post Destacado</h3> */}
 
+          {/* Post destacado */}
+          {featuredPost && <FeaturedPost post={featuredPost} />}
+
+          <h3 className="text-xl font-bold mt-6">Filtrar por</h3>
+          <Separator className="my-2 bg-card-foreground/50 data-[orientation=horizontal]:h-px" />
+
+          {/* Filtro de Categorías */}
+          <div className="flex flex-col items-start gap-10">
             <CategoryFilter
               categories={categories}
               selectedCategory={selectedCategory}
               onCategorySelect={setSelectedCategory}
             />
-
-            {/* Post destacado */}
-            {featuredPost && <FeaturedPost post={featuredPost} />}
           </div>
 
           {/* Listado de posts */}
           <PostFilter posts={posts} selectedCategory={selectedCategory} />
         </section>
-        <aside className="lg:w-1/4 lg:mt-[185px]">
+        <aside className="lg:w-1/4 lg:mt-8">
           <Sidebar />
         </aside>
       </main>
+
+      {/* <HeroImage /> */}
       <HeroImage />
       <Footer />
     </div>

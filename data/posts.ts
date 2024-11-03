@@ -87,7 +87,7 @@ export const posts: Post[] = [
 
     ¡Comencemos a construir una base sólida en HTML!`,
     coverImage:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      "https://images.unsplash.com/photo-1517134062979-e1234be8a085?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     author: {
       name: "Carlos López",
       avatar:
@@ -114,7 +114,7 @@ export const posts: Post[] = [
 
     ¡Hacé que tus páginas cobren vida con CSS!`,
     coverImage:
-      "https://images.unsplash.com/photo-1563720220450-d46a16a49a93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     author: {
       name: "María Fernández",
       avatar:
@@ -141,7 +141,7 @@ export const posts: Post[] = [
 
     ¡Empezá a crear experiencias web interactivas con JavaScript!`,
     coverImage:
-      "https://images.unsplash.com/photo-1517430816045-df4b7de82813?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      "https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     author: {
       name: "Pedro Sánchez",
       avatar:
@@ -150,6 +150,60 @@ export const posts: Post[] = [
     tags: ["JavaScript", "Programación", "Frontend"],
     createdAt: "2024-03-01T09:20:00Z",
     updatedAt: "2024-03-01T09:20:00Z",
+    category: "Java Script",
+  },
+  {
+    id: "6",
+    title: "HTML Semántico: Mejores Prácticas para Principiantes",
+    slug: "html-semantico-mejores-practicas",
+    excerpt:
+      "Descubrí cómo usar etiquetas HTML semánticas para mejorar la accesibilidad y SEO de tus páginas web.",
+    content: `Usar HTML semántico es clave para crear páginas accesibles y optimizadas para motores de búsqueda. Ayuda a los navegadores y tecnologías de asistencia a entender la estructura de tu contenido.
+
+    En este artículo, exploraremos:
+    - La importancia del HTML semántico
+    - Cuándo usar etiquetas como <header>, <footer>, <article>, y <section>
+    - Cómo mejorar la accesibilidad y el SEO
+    - Ejemplos de implementación en proyectos reales
+
+    ¡Descubrí cómo una buena estructura mejora la experiencia de usuario!`,
+    coverImage:
+      "https://images.unsplash.com/photo-1565377674740-8263d1533d4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    author: {
+      name: "Lucía Martínez",
+      avatar:
+        "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    },
+    tags: ["HTML", "Accesibilidad", "SEO"],
+    createdAt: "2024-04-05T10:30:00Z",
+    updatedAt: "2024-04-05T10:30:00Z",
+    category: "HTML",
+  },
+  {
+    id: "7",
+    title: "JavaScript Asíncrono: Callbacks, Promesas y Async/Await",
+    slug: "javascript-asincrono-callbacks-promesas-async-await",
+    excerpt:
+      "Aprendé a manejar operaciones asíncronas en JavaScript con callbacks, promesas y async/await.",
+    content: `JavaScript asíncrono es esencial para manejar operaciones como solicitudes a API o tareas que toman tiempo en completarse. Te permite ejecutar código sin bloquear el flujo principal.
+
+    En esta guía, exploraremos:
+    - Cómo funcionan los callbacks y sus limitaciones
+    - Promesas: qué son y cómo usarlas
+    - Async/Await para simplificar el código asíncrono
+    - Ejemplos de uso en aplicaciones web
+
+    ¡Mejorá tus habilidades en JavaScript con este enfoque en la programación asíncrona!`,
+    coverImage:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    author: {
+      name: "José Ramírez",
+      avatar:
+        "https://images.unsplash.com/photo-1502767089025-ed75a1a106e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    },
+    tags: ["JavaScript", "Asincronía", "Promesas"],
+    createdAt: "2024-04-10T15:00:00Z",
+    updatedAt: "2024-04-10T15:00:00Z",
     category: "JavaScript",
   },
 ];

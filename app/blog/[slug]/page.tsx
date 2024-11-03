@@ -7,6 +7,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/custom/footer/Footer";
+import { Navbar } from '@/components/custom/nav-bar/Navbar';
+import HeroImage from "@/components/custom/hero-image/HeroImage";
 
 // Generar parámetros estáticos para las rutas del blog
 export function generateStaticParams() {
@@ -32,22 +34,12 @@ export default function BlogPost({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background px-4 lg:px-44">
       {/* Cabecera */}
-      <header className="bg-card/50 backdrop-blur-2xl shadow-md sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="hover:underline">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Volver al Blog
-            </Button>
-          </Link>
-          <ThemeToggle />
-        </div>
-      </header>
+      <Navbar/>
 
       {/* Columna principal */}
-      <article className="container mx-auto px-4 py-8 max-w-4xl bg-card rounded-lg shadow-lg mb-20 mt-4">
+      <article className="container mx-auto px-4 py-8 max-w-4xl bg-card rounded-lg shadow-lg mb-20 mt-10">
         <div className="relative h-[400px] w-full mb-8 rounded-lg overflow-hidden">
           <Image
             src={post.coverImage}
@@ -98,6 +90,8 @@ export default function BlogPost({ params }: PageProps) {
         {/* Sección de comentarios */}
         <CommentSection postId={post.id} />
       </article>
+
+      <HeroImage />
 
       {/* Pie de página */}
       <Footer />

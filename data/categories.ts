@@ -1,6 +1,6 @@
 // src/data/categories.ts
 export const categories = [
-  "Todos",
+  "Todos", 
   "HTML",
   "CSS",
   "Java Script",
